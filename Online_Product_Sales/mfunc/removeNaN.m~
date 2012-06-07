@@ -1,0 +1,14 @@
+function [x1,y1] = removeNaN(x1,y1) % removes
+
+for k = 1:size(y,1)
+    if sum(isnan(x1(k,:))) > 0 || isnan(y1(k)) == 1
+        toKeep(k) = 0;
+    end
+end
+
+y1 = y1(~isnan(x1));
+x1 = x1(~isnan(x1));
+x1 = x1(~isnan(y1));
+y1 = y1(~isnan(y1));
+
+end
